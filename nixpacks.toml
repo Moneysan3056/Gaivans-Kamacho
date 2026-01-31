@@ -9,4 +9,4 @@ cmds = ["npm ci"]
 cmds = ["npm run build"]
 
 [start]
-cmd = "npx serve dist --listen 0.0.0.0:$PORT"
+cmd = "npx serve dist -p $PORT"
