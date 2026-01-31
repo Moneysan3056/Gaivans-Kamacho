@@ -7,12 +7,9 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   output: 'server',
   adapter: node({
-    mode: 'standalone'
+    mode: 'standalone',
+    host: '0.0.0.0'
   }),
-  server: {
-    host: '0.0.0.0',
-    port: parseInt(process.env.PORT) || 4321
-  },
   vite: {
     plugins: [tailwindcss()]
   }
