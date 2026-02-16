@@ -2,7 +2,12 @@
     "empresa": {
         "nombre": "GAIVANS KAMACHO EIRL",
         "logo": "/images/logo.png",
-        "eslogan": "Alquiler de Vehículos de Calidad"
+        "eslogan": "Alquiler de Vehículos de Calidad",
+        "url": "https://gaivans-kamacho-production.up.railway.app",
+        "seo": {
+            "keywords": "alquiler de camionetas 4x4, alquiler de vehiculos juliaca, alquiler de autos puno, alquiler de camionetas mineria, toyota hilux alquiler, flota de vehiculos, transporte de personal, turismo puno, gaivans kamacho",
+            "ogImage": "/images/carrusel/slide2.jpg"
+        }
     },
     "carrusel": [
         {

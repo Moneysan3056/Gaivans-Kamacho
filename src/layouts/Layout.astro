@@ -1,12 +1,74 @@
 ---
-import '../styles/global.css';
+import "../styles/global.css";
+import siteData from "../data/site-data.json";
 
 interface Props {
   title: string;
   description?: string;
+  image?: string;
+  canonicalURL?: string;
+  type?: "website" | "article";
 }
 
-const { title, description = 'Alquiler de camionetas 4x4 y vehículos para minería, construcción y turismo - GAIVANS KAMACHO EIRL, Juliaca' } = Astro.props;
+const {
+  title,
+  description = "Alquiler de camionetas 4x4 y vehículos para minería, construcción y turismo en Juliaca y Puno. Flota moderna Toyota Hilux y Fortuner. GAIVANS KAMACHO EIRL.",
+  image = siteData.empresa.seo.ogImage,
+  canonicalURL = siteData.empresa.url,
+  type = "website",
+} = Astro.props;
+
+const { empresa, contacto } = siteData;
+const siteUrl = empresa.url;
+const fullImage = image.startsWith("http") ? image : `${siteUrl}${image}`;
+
+// Schema.org JSON-LD para LocalBusiness
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "AutoRental",
+  name: empresa.nombre,
+  image: [
+    `${siteUrl}${empresa.logo}`,
+    `${siteUrl}/images/carrusel/slide1.jpg`,
+    `${siteUrl}/images/carrusel/slide2.jpg`,
+  ],
+  description: description,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: contacto.direccion,
+    addressLocality: "Juliaca",
+    addressRegion: "Puno",
+    addressCountry: "PE",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: -15.4909,
+    longitude: -70.1343,
+  },
+  url: siteUrl,
+  telephone: contacto.telefono,
+  priceRange: "$$",
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+      ],
+      opens: "08:00",
+      closes: "18:00",
+    },
+  ],
+  areaServed: ["Juliaca", "Puno", "Arequipa", "Cusco"],
+  sameAs: [
+    "https://facebook.com/gaivanskamacho",
+    "https://instagram.com/gaivanskamacho",
+  ],
+};
 ---
 
 <!doctype html>
@@ -15,46 +77,85 @@ const { title, description = 'Alquiler de camionetas 4x4 y vehículos para miner
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    <meta name="keywords" content={empresa.seo.keywords} />
+    <meta name="author" content={empresa.nombre} />
     <meta name="generator" content={Astro.generator} />
-    
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={fullImage} />
+    <meta property="og:site_name" content={empresa.nombre} />
+    <meta property="og:locale" content="es_PE" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={fullImage} />
+
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    
+
     <!-- Fonts - Carga optimizada -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
-    
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
+    />
+
     <!-- Font Awesome - Carga diferida -->
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" /></noscript>
-    
+    <link
+      rel="preload"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      /></noscript
+    >
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
     <title>{title}</title>
   </head>
   <body class="font-poppins bg-dark text-white antialiased">
     <slot />
-    
+
     <script>
       // Optimizado: IntersectionObserver en lugar de scroll listener
       const observerOptions = {
         root: null,
-        rootMargin: '0px 0px -100px 0px',
-        threshold: 0.1
+        rootMargin: "0px 0px -100px 0px",
+        threshold: 0.1,
       };
-      
+
       const revealObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('active');
+            entry.target.classList.add("active");
             revealObserver.unobserve(entry.target); // Deja de observar una vez revelado
           }
         });
       }, observerOptions);
-      
+
       // Observar todos los elementos con reveal
-      document.addEventListener('DOMContentLoaded', () => {
-        const elements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
-        elements.forEach(el => revealObserver.observe(el));
+      document.addEventListener("DOMContentLoaded", () => {
+        const elements = document.querySelectorAll(
+          ".reveal, .reveal-left, .reveal-right",
+        );
+        elements.forEach((el) => revealObserver.observe(el));
       });
     </script>
   </body>
