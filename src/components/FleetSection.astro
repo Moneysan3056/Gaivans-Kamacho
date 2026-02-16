@@ -1,6 +1,6 @@
 ---
-import siteData from '../data/site-data.json';
-import VehicleCard from './VehicleCard.astro';
+import siteData from "../data/site-data.json";
+import VehicleCard from "./VehicleCard.astro";
 
 const { vehiculos } = siteData;
 ---
@@ -9,30 +9,33 @@ const { vehiculos } = siteData;
   <div class="container mx-auto px-4">
     <div class="text-center mb-16">
       <h2 class="text-4xl md:text-5xl font-bold mb-4 reveal">
-        Nuestra <span class="text-primary">Flota</span>
+        Nuestra <span class="text-primary">Flota</span> de Vehículos
       </h2>
       <p class="text-gray-400 text-lg max-w-2xl mx-auto reveal">
-        Descubre nuestra amplia selección de vehículos para minería, construcción y paseos turísticos
+        Camionetas 4x4 Toyota Hilux, Toyota Fortuner y autos para alquiler en
+        Juliaca y Puno. Vehículos nuevos y en perfecto estado
       </p>
     </div>
-    
+
     <!-- Vehicles Grid -->
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {vehiculos.map((vehiculo) => (
-        <VehicleCard 
-          id={vehiculo.id}
-          nombre={vehiculo.nombre}
-          descripcion={vehiculo.descripcion}
-          imagen={vehiculo.imagen}
-          whatsappMsg={vehiculo.whatsappMsg}
-        />
-      ))}
+      {
+        vehiculos.map((vehiculo) => (
+          <VehicleCard
+            id={vehiculo.id}
+            nombre={vehiculo.nombre}
+            descripcion={vehiculo.descripcion}
+            imagen={vehiculo.imagen}
+            whatsappMsg={vehiculo.whatsappMsg}
+          />
+        ))
+      }
     </div>
-    
+
     <!-- CTA -->
     <div class="text-center mt-16 reveal">
-      <a 
-        href="#contacto" 
+      <a
+        href="#contacto"
         class="inline-flex items-center gap-3 px-8 py-4 bg-primary hover:bg-primary-light text-white font-semibold rounded-full transition-all duration-300 shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 hover:-translate-y-1"
       >
         <span>Reservar Ahora</span>

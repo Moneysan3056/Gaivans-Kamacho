@@ -2,11 +2,11 @@
     "empresa": {
         "nombre": "GAIVANS KAMACHO EIRL",
         "logo": "/images/logo.png",
-        "eslogan": "Alquiler de Vehículos de Calidad",
+        "eslogan": "Alquiler de Camionetas 4x4 en Juliaca",
         "url": "https://gaivans-kamacho-production.up.railway.app",
         "seo": {
-            "keywords": "alquiler de camionetas 4x4, alquiler de vehiculos juliaca, alquiler de autos puno, alquiler de camionetas mineria, toyota hilux alquiler, flota de vehiculos, transporte de personal, turismo puno, gaivans kamacho",
-            "ogImage": "/images/carrusel/slide2.jpg"
+            "keywords": "alquiler de camionetas juliaca, alquiler camionetas 4x4, alquiler de autos juliaca, rent a car juliaca, alquiler vehiculos puno, camionetas 4x4 juliaca, alquiler minivan juliaca, toyota hilux alquiler juliaca, alquiler de camionetas para mineria, transporte turistico puno, alquiler toyota fortuner juliaca, alquiler vehiculos aeropuerto juliaca, gaivans kamacho eirl, alquiler de autos puno, camionetas para construccion juliaca",
+            "ogImage": "/images/carrusel/slide4.jpg"
         }
     },
     "carrusel": [
@@ -24,42 +24,86 @@
         },
         {
             "id": 3,
-            "titulo": "Paseos Turísticos",
+            "titulo": "Paseos Turísticos en Puno y Juliaca",
             "descripcion": "Explora los mejores destinos de la región con nuestras camionetas 4x4. Seguridad y comodidad garantizadas.",
             "imagen": "/images/carrusel/slide3.jpg"
         },
         {
             "id": 4,
             "titulo": "Empresa Confiable en Alquiler de Vehículos",
-            "descripcion": "Con varios años de experiencia en el mercado. Alquila con nosotros y disfruta de un servicio de calidad.",
+            "descripcion": "Con más de 10 años de experiencia en el mercado de Juliaca y Puno. Alquila con nosotros y disfruta de un servicio de calidad.",
             "imagen": "/images/carrusel/slide4.jpg"
         }
     ],
     "nosotros": {
-        "descripcion": "En GAIVANS KAMACHO, nos especializamos en el alquiler de camionetas 4x4 y vehículos para minería, construcción civil y paseos turísticos. Con más de 10 años de experiencia en el mercado, nos hemos consolidado como una empresa confiable y comprometida con la satisfacción de nuestros clientes.\n\nNuestra flota incluye modelos Toyota Hilux y Toyota Fortuner, ideales para terrenos difíciles y trabajos pesados. Ofrecemos un servicio personalizado, garantizando la seguridad y comodidad en cada viaje.\n\nConfía en nosotros para tus proyectos de minería, construcción o paseos turísticos. ¡Estamos aquí para ayudarte!",
+        "descripcion": "En GAIVANS KAMACHO EIRL, nos especializamos en el alquiler de camionetas 4x4 y vehículos para minería, construcción civil y paseos turísticos en Juliaca, Puno y toda la región sur del Perú. Con más de 10 años de experiencia en el mercado, nos hemos consolidado como una empresa confiable y comprometida con la satisfacción de nuestros clientes.\n\nNuestra flota incluye modelos Toyota Hilux y Toyota Fortuner, ideales para terrenos difíciles y trabajos pesados en zonas mineras y de construcción. Ofrecemos un servicio personalizado, garantizando la seguridad y comodidad en cada viaje.\n\nConfía en nosotros para tus proyectos de minería, construcción o paseos turísticos por el Lago Titicaca, Sillustani, Chucuito y más destinos de Puno. ¡Estamos aquí para ayudarte!",
         "imagen": "/images/nosotros/about.jpg"
     },
     "vehiculos": [
         {
             "id": 1,
             "nombre": "Camionetas Hilux 4x4",
-            "descripcion": "Nuestras camionetas Toyota están diseñadas para ofrecer el máximo rendimiento en cualquier situación. Ya sea para minería, construcción o paseos turísticos, encontrarás en ellas la confiabilidad y durabilidad que necesitas.",
+            "descripcion": "Nuestras camionetas Toyota Hilux 4x4 están diseñadas para ofrecer el máximo rendimiento en cualquier terreno de Juliaca y Puno. Ya sea para proyectos de minería, obras de construcción civil o paseos turísticos por la región, encontrarás en ellas la confiabilidad y durabilidad que necesitas. Equipadas con tracción integral y motor diésel potente.",
             "imagen": "/images/vehiculos/hilux.jpg",
-            "whatsappMsg": "Hola, me interesa alquilar una Camioneta Hilux 4x4. ¿Podrían darme más información?"
+            "whatsappMsg": "Hola, me interesa alquilar una Camioneta Hilux 4x4 en Juliaca. ¿Podrían darme más información sobre precios y disponibilidad?"
         },
         {
             "id": 2,
             "nombre": "Autos Toyota",
-            "descripcion": "Toyota ofrece una amplia gama de vehículos que combinan innovación, seguridad y eficiencia. Desde sedanes cómodos y eficientes hasta SUVs y pickups robustas, cada modelo está diseñado para brindar un excelente rendimiento y durabilidad. Con tecnología avanzada y un compromiso con la calidad, Toyota es la elección ideal para cualquier tipo de conductor.",
+            "descripcion": "Toyota ofrece una amplia gama de vehículos que combinan innovación, seguridad y eficiencia para recorridos urbanos en Juliaca y Puno. Desde sedanes cómodos y eficientes hasta SUVs y pickups robustas, cada modelo está diseñado para brindar un excelente rendimiento y durabilidad en las carreteras del altiplano peruano.",
             "imagen": "/images/vehiculos/yaris.jpg",
-            "whatsappMsg": "Hola, me interesa alquilar un Auto Toyota. ¿Podrían darme más información?"
+            "whatsappMsg": "Hola, me interesa alquilar un Auto Toyota en Juliaca. ¿Podrían darme más información sobre precios y disponibilidad?"
         },
         {
             "id": 3,
             "nombre": "Toyota Fortuner 4x4",
-            "descripcion": "La Toyota Fortuner combina elegancia y potencia. Ideal para paseos turísticos y viajes familiares, ofrece comodidad y seguridad en cada recorrido. Su diseño robusto y tecnología avanzada la convierten en la mejor opción para explorar Juliaca y sus alrededores.",
+            "descripcion": "La Toyota Fortuner 4x4 combina elegancia y potencia, siendo ideal para paseos turísticos y viajes familiares por Puno, el Lago Titicaca, Sillustani y Chucuito. Ofrece comodidad y seguridad en cada recorrido. Su diseño robusto y tecnología avanzada la convierten en la mejor opción para explorar Juliaca y sus alrededores con total confianza.",
             "imagen": "/images/vehiculos/fortuner.jpg",
-            "whatsappMsg": "Hola, me interesa alquilar una Toyota Fortuner 4x4. ¿Podrían darme más información?"
+            "whatsappMsg": "Hola, me interesa alquilar una Toyota Fortuner 4x4 en Juliaca. ¿Podrían darme más información sobre precios y disponibilidad?"
+        }
+    ],
+    "faq": [
+        {
+            "pregunta": "¿Cuáles son los requisitos para alquilar una camioneta en Juliaca?",
+            "respuesta": "Para alquilar una camioneta 4x4 en GAIVANS KAMACHO necesitas: DNI o pasaporte vigente, licencia de conducir categoría A-II o superior, ser mayor de 21 años y dejar un depósito de garantía. También aceptamos licencias internacionales para turistas extranjeros."
+        },
+        {
+            "pregunta": "¿Cuánto cuesta alquilar una camioneta Toyota Hilux en Juliaca?",
+            "respuesta": "Los precios de alquiler de nuestras camionetas Toyota Hilux 4x4 varían según la duración del alquiler y la temporada. Ofrecemos tarifas por día, semana y mes. Contáctanos por WhatsApp al +51 995010281 para una cotización personalizada y sin compromiso."
+        },
+        {
+            "pregunta": "¿Ofrecen servicio de chofer para minería y construcción?",
+            "respuesta": "Sí, ofrecemos alquiler de camionetas con chofer profesional experimentado en rutas mineras y zonas de construcción en Puno, Juliaca y toda la región sur del Perú. Nuestros conductores conocen todas las rutas y garantizan un traslado seguro."
+        },
+        {
+            "pregunta": "¿Realizan traslados al aeropuerto de Juliaca?",
+            "respuesta": "Sí, realizamos traslados desde y hacia el Aeropuerto Inca Manco Cápac de Juliaca. También ofrecemos servicio de recojo y entrega del vehículo en el aeropuerto, hoteles y terminales terrestres de Juliaca y Puno."
+        },
+        {
+            "pregunta": "¿Qué zonas cubren con el servicio de alquiler de vehículos?",
+            "respuesta": "Nuestro servicio de alquiler de camionetas cubre toda la región de Puno: Juliaca, Puno, Lago Titicaca, Sillustani, Chucuito, Lampa, Ayaviri, Ilave, Juli, Desaguadero y también rutas hacia Arequipa y Cusco."
+        },
+        {
+            "pregunta": "¿Los vehículos incluyen seguro?",
+            "respuesta": "Sí, todos nuestros vehículos cuentan con SOAT vigente y seguro contra todo riesgo. La seguridad de nuestros clientes es nuestra prioridad. Además, realizamos mantenimiento preventivo constante a toda nuestra flota Toyota."
+        }
+    ],
+    "zonasServicio": [
+        {
+            "zona": "Juliaca",
+            "descripcion": "Sede principal. Recojo y entrega en cualquier punto de la ciudad, aeropuerto y terminales."
+        },
+        {
+            "zona": "Puno",
+            "descripcion": "Servicio completo de alquiler con entrega en hoteles a orillas del Lago Titicaca."
+        },
+        {
+            "zona": "Rutas Mineras",
+            "descripcion": "Transporte de personal y equipos a zonas mineras de Puno, Moquegua y Tacna."
+        },
+        {
+            "zona": "Turismo Regional",
+            "descripcion": "Sillustani, Chucuito, Islas del Titicaca, Lampa, ruta hacia Arequipa y Cusco."
         }
     ],
     "contacto": {

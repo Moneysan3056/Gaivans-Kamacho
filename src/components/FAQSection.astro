@@ -1,0 +1,92 @@
+---
+import siteData from "../data/site-data.json";
+const { faq } = siteData;
+---
+
+<section id="preguntas-frecuentes" class="py-20 bg-dark">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4 reveal">
+                Preguntas <span class="text-primary">Frecuentes</span>
+            </h2>
+            <p class="text-gray-400 text-lg max-w-2xl mx-auto reveal">
+                Resolvemos tus dudas sobre el alquiler de camionetas y vehículos
+                en Juliaca y Puno
+            </p>
+        </div>
+
+        <div class="max-w-3xl mx-auto space-y-4">
+            {
+                faq.map((item, index) => (
+                    <div
+                        class="faq-item bg-dark-lighter rounded-xl overflow-hidden reveal"
+                        data-faq-index={index}
+                    >
+                        <button
+                            class="faq-toggle w-full flex items-center justify-between px-6 py-5 text-left group"
+                            aria-expanded="false"
+                            aria-controls={`faq-answer-${index}`}
+                        >
+                            <h3 class="text-lg font-semibold text-white group-hover:text-primary transition-colors pr-4">
+                                {item.pregunta}
+                            </h3>
+                            <i class="fas fa-chevron-down text-primary transition-transform duration-300 faq-icon flex-shrink-0" />
+                        </button>
+                        <div
+                            id={`faq-answer-${index}`}
+                            class="faq-answer px-6 overflow-hidden max-h-0 transition-all duration-300"
+                        >
+                            <p class="text-gray-300 leading-relaxed pb-5">
+                                {item.respuesta}
+                            </p>
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const toggles = document.querySelectorAll(".faq-toggle");
+
+        toggles.forEach((toggle) => {
+            toggle.addEventListener("click", () => {
+                const item = toggle.closest(".faq-item");
+                const answer = item?.querySelector(
+                    ".faq-answer",
+                ) as HTMLElement | null;
+                const icon = toggle.querySelector(".faq-icon");
+                const isOpen = toggle.getAttribute("aria-expanded") === "true";
+
+                // Close all others
+                document.querySelectorAll(".faq-item").forEach((otherItem) => {
+                    if (otherItem !== item) {
+                        const otherAnswer = otherItem.querySelector(
+                            ".faq-answer",
+                        ) as HTMLElement | null;
+                        const otherToggle =
+                            otherItem.querySelector(".faq-toggle");
+                        const otherIcon = otherItem.querySelector(".faq-icon");
+                        if (otherAnswer) otherAnswer.style.maxHeight = "0px";
+                        otherToggle?.setAttribute("aria-expanded", "false");
+                        otherIcon?.classList.remove("rotate-180");
+                    }
+                });
+
+                // Toggle current
+                if (isOpen) {
+                    if (answer) answer.style.maxHeight = "0px";
+                    toggle.setAttribute("aria-expanded", "false");
+                    icon?.classList.remove("rotate-180");
+                } else {
+                    if (answer)
+                        answer.style.maxHeight = answer.scrollHeight + "px";
+                    toggle.setAttribute("aria-expanded", "true");
+                    icon?.classList.add("rotate-180");
+                }
+            });
+        });
+    });
+</script>

@@ -1,28 +1,35 @@
 ---
-import siteData from '../data/site-data.json';
+import siteData from "../data/site-data.json";
 const { nosotros } = siteData;
 ---
 
 <section id="nosotros" class="py-20 bg-dark-light">
   <div class="container mx-auto px-4">
     <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 reveal">
-      <span class="text-primary">Nosotros</span>
+      Sobre <span class="text-primary">Nosotros</span> - Alquiler de Camionetas en
+      Juliaca
     </h2>
-    
+
     <div class="grid md:grid-cols-2 gap-12 items-center">
       <!-- Text Content -->
       <div class="reveal-left">
         <div class="prose prose-lg prose-invert max-w-none">
-          {nosotros.descripcion.split('\n\n').map((paragraph) => (
-            <p class="text-gray-300 leading-relaxed mb-4 text-lg">
-              {paragraph}
-            </p>
-          ))}
+          {
+            nosotros.descripcion
+              .split("\n\n")
+              .map((paragraph) => (
+                <p class="text-gray-300 leading-relaxed mb-4 text-lg">
+                  {paragraph}
+                </p>
+              ))
+          }
         </div>
-        
+
         <div class="mt-8 flex flex-wrap gap-6">
           <div class="flex items-center gap-3">
-            <div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
+            <div
+              class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center"
+            >
               <i class="fas fa-shield-alt text-primary text-xl"></i>
             </div>
             <div>
@@ -30,9 +37,11 @@ const { nosotros } = siteData;
               <p class="text-gray-400 text-sm">Garantizada</p>
             </div>
           </div>
-          
+
           <div class="flex items-center gap-3">
-            <div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
+            <div
+              class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center"
+            >
               <i class="fas fa-users text-primary text-xl"></i>
             </div>
             <div>
@@ -40,9 +49,11 @@ const { nosotros } = siteData;
               <p class="text-gray-400 text-sm">Satisfechos</p>
             </div>
           </div>
-          
+
           <div class="flex items-center gap-3">
-            <div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
+            <div
+              class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center"
+            >
               <i class="fas fa-award text-primary text-xl"></i>
             </div>
             <div>
@@ -52,14 +63,17 @@ const { nosotros } = siteData;
           </div>
         </div>
       </div>
-      
+
       <!-- Image -->
       <div class="reveal-right">
         <div class="relative">
-          <div class="absolute -inset-4 bg-gradient-to-r from-primary/20 to-primary/5 rounded-2xl blur-xl"></div>
-          <img 
-            src={nosotros.imagen} 
-            alt="Nosotros" 
+          <div
+            class="absolute -inset-4 bg-gradient-to-r from-primary/20 to-primary/5 rounded-2xl blur-xl"
+          >
+          </div>
+          <img
+            src={nosotros.imagen}
+            alt="Equipo de GAIVANS KAMACHO - Empresa de alquiler de camionetas en Juliaca"
             class="relative rounded-2xl shadow-2xl w-full h-auto object-cover"
             loading="lazy"
           />

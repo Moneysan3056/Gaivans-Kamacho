@@ -12,7 +12,7 @@ interface Props {
 
 const {
   title,
-  description = "Alquiler de camionetas 4x4 y vehículos para minería, construcción y turismo en Juliaca y Puno. Flota moderna Toyota Hilux y Fortuner. GAIVANS KAMACHO EIRL.",
+  description = "Alquiler de camionetas 4x4, Toyota Hilux y Fortuner en Juliaca y Puno. Servicio para minería, construcción y turismo. Precios competitivos, vehículos nuevos y seguros. GAIVANS KAMACHO EIRL ☎ +51 995010281",
   image = siteData.empresa.seo.ogImage,
   canonicalURL = siteData.empresa.url,
   type = "website",
@@ -22,15 +22,17 @@ const { empresa, contacto } = siteData;
 const siteUrl = empresa.url;
 const fullImage = image.startsWith("http") ? image : `${siteUrl}${image}`;
 
-// Schema.org JSON-LD para LocalBusiness
-const schema = {
+// Schema.org JSON-LD - LocalBusiness / AutoRental
+const schemaLocalBusiness = {
   "@context": "https://schema.org",
   "@type": "AutoRental",
+  "@id": `${siteUrl}/#business`,
   name: empresa.nombre,
   image: [
     `${siteUrl}${empresa.logo}`,
     `${siteUrl}/images/carrusel/slide1.jpg`,
     `${siteUrl}/images/carrusel/slide2.jpg`,
+    `${siteUrl}/images/carrusel/slide4.jpg`,
   ],
   description: description,
   address: {
@@ -38,15 +40,17 @@ const schema = {
     streetAddress: contacto.direccion,
     addressLocality: "Juliaca",
     addressRegion: "Puno",
+    postalCode: "21101",
     addressCountry: "PE",
   },
   geo: {
     "@type": "GeoCoordinates",
-    latitude: -15.4909,
-    longitude: -70.1343,
+    latitude: -15.5,
+    longitude: -70.1333,
   },
   url: siteUrl,
   telephone: contacto.telefono,
+  email: contacto.email,
   priceRange: "$$",
   openingHoursSpecification: [
     {
@@ -58,29 +62,79 @@ const schema = {
         "Thursday",
         "Friday",
         "Saturday",
+        "Sunday",
       ],
       opens: "08:00",
-      closes: "18:00",
+      closes: "20:00",
     },
   ],
-  areaServed: ["Juliaca", "Puno", "Arequipa", "Cusco"],
+  areaServed: [
+    { "@type": "City", name: "Juliaca" },
+    { "@type": "City", name: "Puno" },
+    { "@type": "City", name: "Arequipa" },
+    { "@type": "City", name: "Cusco" },
+  ],
   sameAs: [
     "https://facebook.com/gaivanskamacho",
     "https://instagram.com/gaivanskamacho",
   ],
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.8",
+    reviewCount: "24",
+  },
+};
+
+// Schema.org JSON-LD - FAQPage
+const schemaFAQ = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: siteData.faq.map(
+    (item: { pregunta: string; respuesta: string }) => ({
+      "@type": "Question",
+      name: item.pregunta,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.respuesta,
+      },
+    }),
+  ),
+};
+
+// Schema.org JSON-LD - WebSite (para Sitelinks)
+const schemaWebsite = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: empresa.nombre,
+  url: siteUrl,
+  potentialAction: {
+    "@type": "SearchAction",
+    target: `${siteUrl}/?q={search_term_string}`,
+    "query-input": "required name=search_term_string",
+  },
 };
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang="es-PE">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <meta name="keywords" content={empresa.seo.keywords} />
     <meta name="author" content={empresa.nombre} />
+    <meta
+      name="robots"
+      content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+    />
     <meta name="generator" content={Astro.generator} />
     <link rel="canonical" href={canonicalURL} />
+
+    <!-- Geo Tags para búsqueda local -->
+    <meta name="geo.region" content="PE-PUN" />
+    <meta name="geo.placename" content="Juliaca" />
+    <meta name="geo.position" content="-15.5000;-70.1333" />
+    <meta name="ICBM" content="-15.5000, -70.1333" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content={type} />
@@ -88,15 +142,17 @@ const schema = {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={fullImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:site_name" content={empresa.nombre} />
     <meta property="og:locale" content="es_PE" />
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content={canonicalURL} />
-    <meta property="twitter:title" content={title} />
-    <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={fullImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={fullImage} />
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -125,8 +181,18 @@ const schema = {
       /></noscript
     >
 
-    <!-- JSON-LD Schema -->
-    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    <!-- JSON-LD Schema: LocalBusiness -->
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(schemaLocalBusiness)}
+    />
+    <!-- JSON-LD Schema: FAQPage -->
+    <script type="application/ld+json" set:html={JSON.stringify(schemaFAQ)} />
+    <!-- JSON-LD Schema: WebSite -->
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(schemaWebsite)}
+    />
 
     <title>{title}</title>
   </head>
@@ -145,12 +211,11 @@ const schema = {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("active");
-            revealObserver.unobserve(entry.target); // Deja de observar una vez revelado
+            revealObserver.unobserve(entry.target);
           }
         });
       }, observerOptions);
 
-      // Observar todos los elementos con reveal
       document.addEventListener("DOMContentLoaded", () => {
         const elements = document.querySelectorAll(
           ".reveal, .reveal-left, .reveal-right",
