@@ -1,0 +1,64 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
+import WhatsAppButton from "../components/WhatsAppButton.astro";
+import Navbar from "../components/Navbar.astro";
+
+const canonicalURL = "https://alquilercamionetaspuno.net.pe/alquiler-camionetas-juliaca";
+---
+
+<Layout
+  title="Alquiler de Camionetas en Juliaca | 4x4 Toyota Hilux | GAIVANS KAMACHO"
+  description="Alquiler de camionetas en Juliaca con las mejores tarifas. Camionetas 4x4 Toyota Hilux para minería, construcción y transporte turístico puno. ☎ +51 995010281"
+  canonicalURL={canonicalURL}
+>
+  <Navbar />
+  <main class="pt-24 pb-16 px-4 max-w-4xl mx-auto text-white">
+
+    <h1 class="text-3xl md:text-4xl font-bold mb-6 text-primary">
+      Alquiler de Camionetas en Juliaca – 4x4 Toyota Hilux y Fortuner
+    </h1>
+
+    <p class="text-gray-300 mb-8 text-lg leading-relaxed">
+      En <strong>GAIVANS KAMACHO EIRL</strong> ofrecemos el mejor servicio de <strong>alquiler de camionetas en Juliaca</strong>. Contamos con una flota moderna de Toyota Hilux y Toyota Fortuner 4x4, ideales para minería, construcción civil y turismo en la región de Puno. Vehículos seguros, revisados y con SOAT vigente.
+    </p>
+
+    <h2 class="text-2xl font-semibold mb-4 text-white">¿Por qué alquilar camionetas en Juliaca con nosotros?</h2>
+    <ul class="text-gray-300 space-y-3 mb-8 list-disc list-inside">
+      <li>Flota de camionetas 4x4 modernas y en perfecto estado.</li>
+      <li>Precios competitivos con tarifas por día, semana o mes.</li>
+      <li>Servicio disponible los 7 días de la semana, de 8:00 a 20:00.</li>
+      <li>Recojo y entrega en aeropuerto, hoteles y terminales de Juliaca.</li>
+      <li>Opción de alquiler con o sin chofer profesional.</li>
+      <li>Más de 10 años de experiencia en el mercado de Juliaca y Puno.</li>
+    </ul>
+
+    <h2 class="text-2xl font-semibold mb-4 text-white">Nuestros vehículos disponibles en Juliaca</h2>
+    <p class="text-gray-300 mb-8 leading-relaxed">
+      Nuestra flota incluye <strong>Toyota Hilux 4x4</strong> para trabajos pesados en rutas mineras y obras, y <strong>Toyota Fortuner 4x4</strong> para traslados turísticos y viajes familiares con mayor comodidad. Todos los vehículos cuentan con tracción 4WD, aire acondicionado y seguro contra todo riesgo.
+    </p>
+
+    <div class="bg-gray-800 rounded-xl p-6 mb-10 space-y-3">
+      <h3 class="text-white font-semibold text-lg">Contáctanos ahora</h3>
+      <p class="text-gray-400">📞 <a href="tel:+51995010281" class="text-primary hover:underline">+51 995010281</a></p>
+      <p class="text-gray-400">📍 Juliaca – Puno, Perú</p>
+      <a href="https://wa.me/51995010281?text=Hola,%20me%20interesa%20alquilar%20una%20camioneta%20en%20Juliaca" class="inline-block mt-2 bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors">
+        Cotizar por WhatsApp
+      </a>
+    </div>
+
+    <!-- Internal links -->
+    <nav class="border-t border-gray-700 pt-8">
+      <p class="text-gray-400 text-sm mb-3">Más información:</p>
+      <ul class="flex flex-wrap gap-4 text-sm">
+        <li><a href="/" class="text-primary hover:underline">Inicio – Alquiler de Camionetas en Puno</a></li>
+        <li><a href="/transporte-turistico-puno" class="text-primary hover:underline">Transporte Turístico Puno</a></li>
+        <li><a href="/alquiler-camionetas-lago-titicaca" class="text-primary hover:underline">Alquiler Camionetas Lago Titicaca</a></li>
+        <li><a href="/#flota" class="text-primary hover:underline">Ver Nuestra Flota</a></li>
+        <li><a href="/#contacto" class="text-primary hover:underline">Contacto</a></li>
+      </ul>
+    </nav>
+  </main>
+  <Footer />
+  <WhatsAppButton />
+</Layout>

@@ -1,0 +1,64 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
+import WhatsAppButton from "../components/WhatsAppButton.astro";
+import Navbar from "../components/Navbar.astro";
+
+const canonicalURL = "https://alquilercamionetaspuno.net.pe/transporte-turistico-puno";
+---
+
+<Layout
+  title="Transporte Turístico Puno | Camionetas 4x4 | GAIVANS KAMACHO EIRL"
+  description="Transporte turístico puno con camionetas 4x4 Toyota. Recorridos al Lago Titicaca, Sillustani, Chucuito y toda la región. Servicio seguro, cómodo y personalizado. ☎ +51 995010281"
+  canonicalURL={canonicalURL}
+>
+  <Navbar />
+  <main class="pt-24 pb-16 px-4 max-w-4xl mx-auto text-white">
+
+    <h1 class="text-3xl md:text-4xl font-bold mb-6 text-primary">
+      Transporte Turístico Puno – Camionetas 4x4 para Toda la Región
+    </h1>
+
+    <p class="text-gray-300 mb-8 text-lg leading-relaxed">
+      ¿Buscas <strong>transporte turístico en Puno</strong>? En <strong>GAIVANS KAMACHO EIRL</strong> contamos con camionetas modernas y cómodas para llevarte a los destinos más impresionantes de la región. Desde el <strong>Lago Titicaca</strong> hasta Sillustani, Chucuito e incluso rutas hacia Cusco y Arequipa, te aseguramos un viaje seguro y memorable.
+    </p>
+
+    <h2 class="text-2xl font-semibold mb-4 text-white">Servicios de transporte turístico que ofrecemos</h2>
+    <ul class="text-gray-300 space-y-3 mb-8 list-disc list-inside">
+      <li><strong>City tour Puno</strong> – Recorrido por los principales atractivos de la ciudad.</li>
+      <li><strong>Tour Sillustani</strong> – Chullpas preincas con impresionantes vistas al lago.</li>
+      <li><strong>Ruta Chucuito y Juli</strong> – Arquitectura colonial del altiplano.</li>
+      <li><strong>Traslado aeropuerto – hotel</strong> en Juliaca y Puno.</li>
+      <li><strong>Ruta Puno – Cusco</strong> por la carretera Interoceánica Sur.</li>
+      <li><strong>Circuito altiplano completo</strong> a medida para grupos y familias.</li>
+    </ul>
+
+    <h2 class="text-2xl font-semibold mb-4 text-white">¿Por qué elegir nuestro servicio de transporte turístico en Puno?</h2>
+    <p class="text-gray-300 mb-8 leading-relaxed">
+      Nuestros conductores conocen a la perfección las rutas y destinos de la región de Puno. Ofrecemos vehículos con capacidad para 5 a 7 pasajeros, con <strong>aire acondicionado, tracción 4x4</strong> y toda la seguridad para moverte por el altiplano. Organizamos circuitos personalizados adaptados a tus horarios y presupuesto. ¡Contáctanos y planifica tu aventura!
+    </p>
+
+    <div class="bg-gray-800 rounded-xl p-6 mb-10 space-y-3">
+      <h3 class="text-white font-semibold text-lg">Solicita tu recorrido turístico</h3>
+      <p class="text-gray-400">📞 <a href="tel:+51995010281" class="text-primary hover:underline">+51 995010281</a></p>
+      <p class="text-gray-400">📍 Juliaca – Puno, Perú</p>
+      <a href="https://wa.me/51995010281?text=Hola,%20me%20interesa%20el%20servicio%20de%20transporte%20tur%C3%ADstico%20en%20Puno" class="inline-block mt-2 bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors">
+        Cotizar por WhatsApp
+      </a>
+    </div>
+
+    <!-- Internal links -->
+    <nav class="border-t border-gray-700 pt-8">
+      <p class="text-gray-400 text-sm mb-3">Más información:</p>
+      <ul class="flex flex-wrap gap-4 text-sm">
+        <li><a href="/" class="text-primary hover:underline">Inicio – Alquiler de Camionetas en Puno</a></li>
+        <li><a href="/alquiler-camionetas-juliaca" class="text-primary hover:underline">Alquiler Camionetas Juliaca</a></li>
+        <li><a href="/alquiler-camionetas-lago-titicaca" class="text-primary hover:underline">Alquiler Camionetas Lago Titicaca</a></li>
+        <li><a href="/#flota" class="text-primary hover:underline">Ver Nuestra Flota</a></li>
+        <li><a href="/#contacto" class="text-primary hover:underline">Contacto</a></li>
+      </ul>
+    </nav>
+  </main>
+  <Footer />
+  <WhatsAppButton />
+</Layout>

@@ -1,0 +1,64 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
+import WhatsAppButton from "../components/WhatsAppButton.astro";
+import Navbar from "../components/Navbar.astro";
+
+const canonicalURL = "https://alquilercamionetaspuno.net.pe/alquiler-camionetas-lago-titicaca";
+---
+
+<Layout
+  title="Alquiler de Camionetas Lago Titicaca | 4x4 Toyota | GAIVANS KAMACHO"
+  description="Alquiler de camionetas 4x4 puno para visitar el Lago Titicaca. Transporte turístico puno a las islas y destinos del altiplano con Toyota Hilux y Fortuner. ☎ +51 995010281"
+  canonicalURL={canonicalURL}
+>
+  <Navbar />
+  <main class="pt-24 pb-16 px-4 max-w-4xl mx-auto text-white">
+
+    <h1 class="text-3xl md:text-4xl font-bold mb-6 text-primary">
+      Alquiler de Camionetas para el Lago Titicaca – Turismo y Aventura
+    </h1>
+
+    <p class="text-gray-300 mb-8 text-lg leading-relaxed">
+      Descubre el <strong>Lago Titicaca</strong> y sus alrededores a bordo de nuestras <strong>camionetas 4x4 puno</strong>. En <strong>GAIVANS KAMACHO EIRL</strong> te ofrecemos el mejor servicio de transporte para explorar los destinos más impresionantes del altiplano peruano: islas flotantes, Sillustani, Chucuito, Ilave y mucho más.
+    </p>
+
+    <h2 class="text-2xl font-semibold mb-4 text-white">Destinos turísticos que puedes visitar con nuestras camionetas</h2>
+    <ul class="text-gray-300 space-y-3 mb-8 list-disc list-inside">
+      <li><strong>Islas Uros y Taquile</strong> – Traslado al puerto de Puno y regreso.</li>
+      <li><strong>Sillustani</strong> – Chullpas funerarias prehispánicas a 34 km de Puno.</li>
+      <li><strong>Chucuito</strong> – Pueblo colonial a orillas del Lago Titicaca.</li>
+      <li><strong>Ilave y Juli</strong> – Ciudades con riqueza arqueológica e histórica.</li>
+      <li><strong>Desaguadero</strong> – Ruta fronteriza con Bolivia via el altiplano.</li>
+      <li><strong>Circuito turístico completo</strong> de Puno con chofer guía opcional.</li>
+    </ul>
+
+    <h2 class="text-2xl font-semibold mb-4 text-white">Vehículos ideales para el altiplano puneño</h2>
+    <p class="text-gray-300 mb-8 leading-relaxed">
+      El entorno del <strong>Lago Titicaca</strong> requiere vehículos capaces de afrontar carreteras en altura y caminos rurales. Nuestras <strong>Toyota Hilux y Fortuner 4x4</strong> están adaptadas para el altiplano: potencia a gran altitud, tracción en todo terreno y el confort que tus clientes o familia merecen. Alquila con o sin chofer, según tu preferencia.
+    </p>
+
+    <div class="bg-gray-800 rounded-xl p-6 mb-10 space-y-3">
+      <h3 class="text-white font-semibold text-lg">Reserva tu camioneta ahora</h3>
+      <p class="text-gray-400">📞 <a href="tel:+51995010281" class="text-primary hover:underline">+51 995010281</a></p>
+      <p class="text-gray-400">📍 Juliaca – Puno, Perú</p>
+      <a href="https://wa.me/51995010281?text=Hola,%20me%20interesa%20alquilar%20una%20camioneta%20para%20visitar%20el%20Lago%20Titicaca" class="inline-block mt-2 bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors">
+        Cotizar por WhatsApp
+      </a>
+    </div>
+
+    <!-- Internal links -->
+    <nav class="border-t border-gray-700 pt-8">
+      <p class="text-gray-400 text-sm mb-3">Más información:</p>
+      <ul class="flex flex-wrap gap-4 text-sm">
+        <li><a href="/" class="text-primary hover:underline">Inicio – Alquiler de Camionetas en Puno</a></li>
+        <li><a href="/transporte-turistico-puno" class="text-primary hover:underline">Transporte Turístico Puno</a></li>
+        <li><a href="/alquiler-camionetas-juliaca" class="text-primary hover:underline">Alquiler Camionetas Juliaca</a></li>
+        <li><a href="/#flota" class="text-primary hover:underline">Ver Nuestra Flota</a></li>
+        <li><a href="/#contacto" class="text-primary hover:underline">Contacto</a></li>
+      </ul>
+    </nav>
+  </main>
+  <Footer />
+  <WhatsAppButton />
+</Layout>
